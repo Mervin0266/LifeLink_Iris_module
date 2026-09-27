@@ -1,0 +1,17 @@
+[Unit]
+Description=LifeLink Pi Zero Autonomous Edge Camera Service
+After=network-online.target wpa_supplicant.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/LifeLink
+ExecStart=/usr/bin/python3 /home/pi/LifeLink/client_pizero.py --source 0
+Restart=on-failure
+RestartSec=3s
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,1 @@
+deployments/pi5/models/sota.pth filter=lfs diff=lfs merge=lfs -text
